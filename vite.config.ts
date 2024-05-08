@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import vue from "@vitejs/plugin-vue";
 import path from "path";
 import { defineConfig } from "vite";
 import packageJson from "./package.json";
@@ -33,6 +34,13 @@ module.exports = defineConfig({
       formats,
       fileName: format => fileName[format],
     },
+    rollupOptions: {
+      external: ["vue", "vue-demi", "@vueuse/core"],
+    },
+  },
+  plugins: [vue()],
+  optimizeDeps: {
+    exclude: ["vue-demi"],
   },
   test: {},
   resolve: {
