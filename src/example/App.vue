@@ -4,7 +4,7 @@
       <p>Current comp is: {{ is }} .</p>
       <p>Scroll it and toggle to observe its scroll state.</p>
       <p>
-        <button @click="switchComp">Click to switch</button>
+        <button @click="next">Click to next</button>
       </p>
     </div>
     <div id="content">
@@ -19,20 +19,26 @@
 import { defineComponent } from "vue-demi";
 import CompA from "./CompA.vue";
 import CompB from "./CompB.vue";
+import CompC from "./CompC.vue";
+
+const components = { CompA, CompB, CompC };
+
+const keys = Object.keys(components);
 
 export default defineComponent({
+  name: "App",
   components: {
-    CompA,
-    CompB,
+    ...components,
   },
   data() {
     return {
-      is: "comp-a",
+      is: keys[0],
     };
   },
   methods: {
-    switchComp() {
-      this.is = this.is === "comp-a" ? "comp-b" : "comp-a";
+    next() {
+      const index = keys.indexOf(this.is);
+      this.is = keys[(index + 1) % keys.length];
     },
   },
 });
