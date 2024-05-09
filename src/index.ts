@@ -1,17 +1,18 @@
-import keepScroll from "./directives/index";
-import { isVue2, Plugin, Vue2 } from "vue-demi";
+import { isVue3, Plugin, Vue2 } from "vue-demi";
+import { name, directive } from "./directive";
+import Component from "./component";
 
-const { name, directive } = keepScroll;
-
-const plugin2: Plugin = function () {
-  Vue2?.directive(name, directive);
+const v2: Plugin = function () {
+  Vue2.directive(name, directive);
+  Vue2.component(name, Component);
   return Vue2;
 };
 
-const plugin3: Plugin = function (app) {
+const v3: Plugin = function (app) {
   app.directive(name, directive);
+  app.component(name, Component);
   return app;
 };
 
-export default isVue2 ? plugin2 : plugin3;
-export { name, directive };
+export default isVue3 ? v3 : v2;
+export { name, directive as vKeepScroll, Component as KeepScroll, v2, v3 };

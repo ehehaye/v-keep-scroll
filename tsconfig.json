@@ -19,9 +19,11 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "node"],
-    "skipLibCheck": true
+    "types": ["vite/client", "node", "./types"],
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue"
   },
-  "include": ["src", "example"],
+  "include": ["src", "types"],
   "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"]
 }

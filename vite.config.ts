@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import { defineConfig } from "vite";
 import packageJson from "./package.json";
@@ -17,9 +18,9 @@ const getPackageNameCamelCase = () => {
 };
 
 const fileName = {
-  es: `${getPackageName()}.mjs`,
-  cjs: `${getPackageName()}.cjs`,
-  iife: `${getPackageName()}.iife.js`,
+  es: `index.mjs`,
+  cjs: `index.cjs`,
+  iife: `index.iife.js`,
 };
 
 const formats = Object.keys(fileName) as Array<keyof typeof fileName>;
@@ -38,11 +39,15 @@ module.exports = defineConfig({
       external: ["vue", "vue-demi", "@vueuse/core"],
     },
   },
-  plugins: [vue()],
+  plugins: [vue(), vueJsx()],
   optimizeDeps: {
     exclude: ["vue-demi"],
   },
   test: {},
+  esbuild: {
+    jsxFactory: "h",
+    jsxFragment: "Fragment",
+  },
   resolve: {
     alias: [
       { find: "@", replacement: path.resolve(__dirname, "src") },
