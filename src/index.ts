@@ -15,4 +15,4 @@ const v3: Plugin = function (app) {
 };
 
 export default isVue3 ? v3 : v2;
-export { name, directive, Component, v2, v3 };
+export { name, directive as vKeepScroll, Component as KeepScroll, v2, v3 };

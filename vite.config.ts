@@ -18,8 +18,9 @@ const getPackageNameCamelCase = () => {
 };
 
 const fileName = {
-  es: `${getPackageName()}.mjs`,
-  cjs: `${getPackageName()}.cjs`,
+  es: `index.mjs`,
+  cjs: `index.cjs`,
+  iife: `index.iife.js`,
 };
 
 const formats = Object.keys(fileName) as Array<keyof typeof fileName>;

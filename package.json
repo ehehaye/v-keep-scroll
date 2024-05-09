@@ -9,22 +9,28 @@
   "author": "hongxin.tang@hotmail.com",
   "license": "MIT",
   "version": "0.0.1",
-  "main": "./dist/v-keep-scroll.cjs",
-  "module": "./dist/v-keep-scroll.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "exports": {
     ".": {
-      "require": "./dist/v-keep-scroll.cjs",
-      "import": "./dist/v-keep-scroll.mjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
     },
     "./dist/": {
       "import": "./dist/",
       "require": "./dist/"
+    },
+    "./types": {
+      "require": "./dist/global.d.ts",
+      "import": "./dist/global.d.ts"
     }
   },
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite --host",
-    "build": "rimraf build/**/* && tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && copyfiles ./package.json build",
+    "build": "rimraf build/**/* && tsc && vite build && pnpm dts && pnpm copy:pkg",
+    "dts": "dts-bundle-generator --config ./dts.config.ts && copyfiles --up 1 ./src/*.d.ts build/dist",
+    "copy:pkg": "copyfiles ./package.json build",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "lint": "eslint . --ext .ts,.vue",

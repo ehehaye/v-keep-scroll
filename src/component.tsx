@@ -1,4 +1,4 @@
-import { defineComponent, h } from "vue-demi";
+import { defineComponent, resolveComponent } from "vue-demi";
 
 export default defineComponent({
   name: "keep-scroll",
@@ -10,7 +10,7 @@ export default defineComponent({
   },
   render() {
     const { tag, $attrs, $slots } = this;
-    const Comp = h(tag);
+    const Comp = resolveComponent(tag); // h(tag)
     return (
       // @ts-ignore
       <Comp v-keep-scroll {...$attrs}>
