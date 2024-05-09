@@ -20,7 +20,9 @@
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["vite/client", "node", "./types"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue"
   },
   "include": ["src", "types"],
   "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"]

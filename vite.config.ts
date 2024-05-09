@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import { defineConfig } from "vite";
 import packageJson from "./package.json";
@@ -37,11 +38,15 @@ module.exports = defineConfig({
       external: ["vue", "vue-demi", "@vueuse/core"],
     },
   },
-  plugins: [vue()],
+  plugins: [vue(), vueJsx()],
   optimizeDeps: {
     exclude: ["vue-demi"],
   },
   test: {},
+  esbuild: {
+    jsxFactory: "h",
+    jsxFragment: "Fragment",
+  },
   resolve: {
     alias: [
       { find: "@", replacement: path.resolve(__dirname, "src") },

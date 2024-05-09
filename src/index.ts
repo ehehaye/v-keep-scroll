@@ -1,6 +1,6 @@
 import { isVue3, Plugin, Vue2 } from "vue-demi";
 import { name, directive } from "./directive";
-import Component from "./component.vue";
+import Component from "./component";
 
 const v2: Plugin = function () {
   Vue2.directive(name, directive);
