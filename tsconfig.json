@@ -3,7 +3,8 @@
     "rootDir": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@@/*": ["./*"]
+      "@@/*": ["./*"],
+      "v-keep-scroll": ["./src/index"]
     },
     "target": "ESNext",
     "useDefineForClassFields": true,
