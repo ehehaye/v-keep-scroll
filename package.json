@@ -8,7 +8,7 @@
   ],
   "author": "hongxin.tang@hotmail.com",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "exports": {
@@ -35,7 +35,8 @@
     "test:coverage": "vitest --coverage",
     "lint": "eslint . --ext .ts,.vue",
     "uninstall-husky": "npm uninstall husky --no-save && git config --unset core.hooksPath && npx rimraf .husky",
-    "pub": "pnpm build && cd build && pnpm publish"
+    "pub": "pnpm build && cd build && pnpm publish",
+    "push": "git push && git push --tags && pnpm pub"
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
