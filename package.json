@@ -35,7 +35,8 @@
     "test:coverage": "vitest --coverage",
     "lint": "eslint . --ext .ts,.vue",
     "uninstall-husky": "npm uninstall husky --no-save && git config --unset core.hooksPath && npx rimraf .husky",
-    "pub": "pnpm build && cd build && pnpm publish"
+    "pub": "pnpm build && cd build && pnpm publish",
+    "push": "git push && git push --tags && pnpm pub"
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
