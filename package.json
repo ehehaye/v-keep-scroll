@@ -8,7 +8,7 @@
   ],
   "author": "hongxin.tang@hotmail.com",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "exports": {
@@ -30,7 +30,7 @@
     "dev": "vite --host",
     "build": "rimraf build/**/* && tsc && vite build && pnpm dts && pnpm copy",
     "dts": "dts-bundle-generator --config ./dts.config.ts && copyfiles --up 1 ./types/global.d.ts build/dist",
-    "copy": "copyfiles ./package.json ./README.md build",
+    "copy": "copyfiles ./package.json *.md build",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "lint": "eslint . --ext .ts,.vue",
