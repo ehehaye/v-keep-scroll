@@ -1,4 +1,5 @@
 import { defineComponent, resolveComponent } from "vue-demi";
+import { directive } from "./directive";
 
 export default defineComponent({
   name: "keep-scroll",
@@ -7,6 +8,9 @@ export default defineComponent({
       type: String,
       default: "div",
     },
+  },
+  directives: {
+    keepScroll: directive,
   },
   render() {
     const { tag, $attrs, $slots } = this;
