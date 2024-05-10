@@ -18,7 +18,7 @@ import plugin from "v-keep-scroll";
 import App from "./App.vue";
 
 const app = createApp(App);
-app.use(plugin)
+app.use(plugin);
 app.mount("#app");
 ```
 
@@ -58,24 +58,37 @@ When using the v-keep-scroll directive or the KeepScroll component, make sure to
 ```
 
 ```html
+<!-- CompA -->
 <!-- Apply the directive to the current element -->
 <div class="scrollable" v-keep-scroll>
   <div id="child"></div>
 </div>
 
+<!-- CompB -->
 <!-- Apply the directive to a single child using a string selector -->
 <div v-keep-scroll="#child">
   <div class="scrollable" id="child"></div>
 </div>
 
+<!-- CompC -->
 <!-- Apply the directive to multiple children using an array of string selectors -->
 <div v-keep-scroll="['#child', '.content']">
   <div class="scrollable" id="child"></div>
   <div class="scrollable" class="content"></div>
 </div>
 
+<!-- CompD -->
 <!-- Apply the directive using the KeepScroll component with a custom tag (default tag is "div") -->
 <keep-scroll tag="div" class="scrollable">
   <div id="child"></div>
 </keep-scroll>
+```
+
+```html
+<keep-alive>
+  <comp-a v-if></comp-a>
+  <comp-b v-else-if></comp-b>
+  <comp-c v-else-if></comp-c>
+  <comp-d v-else></comp-d>
+</keep-alive>
 ```

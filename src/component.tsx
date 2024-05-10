@@ -10,14 +10,14 @@ export default defineComponent({
     },
   },
   directives: {
-    keepScroll: directive,
+    inner: directive,
   },
   render() {
     const { tag, $attrs, $slots } = this;
     const Comp = resolveComponent(tag); // h(tag)
     return (
       // @ts-ignore
-      <Comp v-keep-scroll {...$attrs}>
+      <Comp v-inner {...$attrs}>
         {/* @ts-ignore */}
         {...$slots.default()}
       </Comp>

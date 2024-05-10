@@ -1,7 +1,7 @@
 <template>
-  <k-s id="comp-c">
+  <keep-scroll id="comp-c">
     <div class="child">123</div>
-  </k-s>
+  </keep-scroll>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ import { KeepScroll } from "v-keep-scroll";
 // manually import
 export default defineComponent({
   components: {
-    KS: KeepScroll,
+    KeepScroll,
   },
 });
 </script>
