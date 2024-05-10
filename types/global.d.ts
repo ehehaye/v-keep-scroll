@@ -1,5 +1,5 @@
-import { KeepScroll } from "./index";
-import { vKeepScroll } from "./index";
+import { KeepScroll } from "v-keep-scroll";
+import { vKeepScroll } from "v-keep-scroll";
 
 declare module "vue" {
   export interface GlobalComponents {
