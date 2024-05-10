@@ -1,6 +1,6 @@
 # v-keep-scroll
 
-[中文文档](README.zh-CN.md)
+[中文文档](https://github.com/tanghongxin/v-keep-scroll/blob/main/README.zh-CN.md)
 
 The v-keep-scroll library enables the preservation of scroll positions for elements that are managed by the keep-alive component between activation and deactivation.
 
