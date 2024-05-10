@@ -1,5 +1,5 @@
 import { createApp } from "vue-demi";
-import plugin from "@/index";
+import plugin from "v-keep-scroll";
 import App from "./App.vue";
 
 const app = createApp(App);

@@ -1,8 +1,20 @@
 <template>
-  <keep-scroll id="comp-c">
+  <k-s id="comp-c">
     <div class="child">123</div>
-  </keep-scroll>
+  </k-s>
 </template>
+
+<script>
+import { defineComponent } from "vue-demi";
+import { KeepScroll } from "v-keep-scroll";
+
+// manually import
+export default defineComponent({
+  components: {
+    KS: KeepScroll,
+  },
+});
+</script>
 
 <style>
 #comp-c {
