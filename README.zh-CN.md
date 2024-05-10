@@ -18,7 +18,7 @@ import plugin from "v-keep-scroll";
 import App from "./App.vue";
 
 const app = createApp(App);
-app.use(plugin)
+app.use(plugin);
 app.mount("#app");
 ```
 
@@ -58,24 +58,37 @@ export default {
 ```
 
 ```html
+<!-- CompA -->
 <!-- 应用于当前元素 -->
 <div class="scrollable" v-keep-scroll>
   <div id="child"></div>
 </div>
 
+<!-- CompB -->
 <!-- 应用于单个子元素，通过字符串选择器 -->
 <div v-keep-scroll="#child">
   <div class="scrollable" id="child"></div>
 </div>
 
+<!-- CompC -->
 <!-- 应用于多个子元素，通过字符串选择器数组 -->
 <div v-keep-scroll="['#child', '.content']">
   <div class="scrollable" id="child"></div>
   <div class="scrollable" id="content"></div>
 </div>
 
+<!-- CompD -->
 <!-- 通过包装元素应用指令，标签默认为 "div" -->
 <keep-scroll tag="div" class="scrollable">
   <div id="child"></div>
 </keep-scroll>
+```
+
+```html
+<keep-alive>
+  <comp-a v-if></comp-a>
+  <comp-b v-else-if></comp-b>
+  <comp-c v-else-if></comp-c>
+  <comp-d v-else></comp-d>
+</keep-alive>
 ```
