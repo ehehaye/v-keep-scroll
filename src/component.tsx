@@ -2,7 +2,6 @@ import { defineComponent, h } from "vue";
 import { directive } from "./directive";
 
 export default defineComponent({
-  name: "keep-scroll",
   props: {
     tag: {
       type: String,
