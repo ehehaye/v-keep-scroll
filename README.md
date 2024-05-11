@@ -36,7 +36,7 @@ app.mount("#app");
 }
 ```
 
-### Global Import (via CDN)
+### Globally Import (via CDN)
 
 ```html
 <script src="https://unpkg.com/vue"></script>
@@ -50,7 +50,7 @@ app.mount("#app");
 </script>
 ```
 
-### Manual Import
+### Manually Import
 
 ```javascript
 import { KeepScroll, vKeepScroll } from "v-keep-scroll";
@@ -82,8 +82,8 @@ When using the v-keep-scroll directive or the KeepScroll component, make sure to
 
 <!-- CompB -->
 <!-- Apply the directive to a single child using a string selector -->
-<div v-keep-scroll="#child">
-  <div class="scrollable" id="child"></div>
+<div class="scrollable" v-keep-scroll="#child">
+  <div id="child"></div>
 </div>
 
 <!-- CompC -->

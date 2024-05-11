@@ -82,8 +82,8 @@ export default {
 
 <!-- CompB -->
 <!-- 应用于单个子元素，通过字符串选择器 -->
-<div v-keep-scroll="#child">
-  <div class="scrollable" id="child"></div>
+<div class="scrollable" v-keep-scroll="#child">
+  <div id="child"></div>
 </div>
 
 <!-- CompC -->

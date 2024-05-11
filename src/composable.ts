@@ -4,7 +4,6 @@ import { ref, watch, computed } from "vue";
 /**
  * Inspired by https://github.com/vuejs/core/issues/2349#issuecomment-1954523642
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useVisibilityLifecycle = (el: any) => {
   const visible = useElementVisibility(el);
 
@@ -20,7 +19,6 @@ export const useVisibilityLifecycle = (el: any) => {
   return { state, isActivated, isDeactivated };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const useKeepScroll = (el: any) => {
   const { x, y } = useScroll(el, { throttle: 100 });
   const { isActivated } = useVisibilityLifecycle(el);
