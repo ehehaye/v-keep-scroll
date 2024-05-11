@@ -1,5 +1,5 @@
 import { useElementVisibility, useScroll } from "@vueuse/core";
-import { ref, watch, computed } from "vue-demi";
+import { ref, watch, computed } from "vue";
 
 /**
  * Inspired by https://github.com/vuejs/core/issues/2349#issuecomment-1954523642

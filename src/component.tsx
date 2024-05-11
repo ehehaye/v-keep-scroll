@@ -1,4 +1,4 @@
-import { defineComponent, resolveComponent } from "vue-demi";
+import { defineComponent, h } from "vue";
 import { directive } from "./directive";
 
 export default defineComponent({
@@ -14,12 +14,11 @@ export default defineComponent({
   },
   render() {
     const { tag, $attrs, $slots } = this;
-    const Comp = resolveComponent(tag); // h(tag)
+    const Comp = h(tag);
     return (
       // @ts-ignore
       <Comp v-inner {...$attrs}>
-        {/* @ts-ignore */}
-        {...$slots.default()}
+        {...$slots.default?.() || []}
       </Comp>
     );
   },
