@@ -2,6 +2,8 @@
 
 [English README](https://github.com/tanghongxin/v-keep-scroll/blob/main/README.md)
 
+[在线示例](https://codepen.io/tanghongxin/pen/oNRNMzR)
+
 v-keep-scroll 可以在 activated 和 deactivated 之间保持 keep-alive 组件下的元素的滚动位置。
 
 ## 安装
