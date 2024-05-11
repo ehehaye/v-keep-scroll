@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { defineComponent } from "vue-demi";
+import { defineComponent } from "vue";
 import CompA from "./CompA.vue";
 import CompB from "./CompB.vue";
 import CompC from "./CompC.vue";

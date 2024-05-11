@@ -1,11 +1,11 @@
 <template>
   <keep-scroll id="comp-c">
-    <div class="child">123</div>
+    <div class="child">slot xxx</div>
   </keep-scroll>
 </template>
 
 <script>
-import { defineComponent } from "vue-demi";
+import { defineComponent } from "vue";
 import { KeepScroll } from "v-keep-scroll";
 
 // manually import
