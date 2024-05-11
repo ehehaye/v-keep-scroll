@@ -36,13 +36,10 @@ module.exports = defineConfig({
       fileName: format => fileName[format],
     },
     rollupOptions: {
-      external: ["vue", "vue-demi", "@vueuse/core"],
+      external: ["vue", "@vueuse/core"],
     },
   },
   plugins: [vue(), vueJsx()],
-  optimizeDeps: {
-    exclude: ["vue-demi"],
-  },
   test: {},
   esbuild: {
     jsxFactory: "h",

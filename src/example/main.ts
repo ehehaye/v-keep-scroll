@@ -1,4 +1,4 @@
-import { createApp } from "vue-demi";
+import { createApp } from "vue";
 import plugin from "v-keep-scroll";
 import App from "./App.vue";
 

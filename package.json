@@ -41,12 +41,11 @@
     "push": "git push && git push --tags && pnpm pub"
   },
   "dependencies": {
-    "@vueuse/core": "^10.9.0",
-    "vue-demi": "^0.14.7"
+    "@vueuse/core": "^10.9.0"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
-    "vue": "^2.0.0 || >=3.0.0"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.6",

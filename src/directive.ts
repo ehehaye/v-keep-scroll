@@ -1,4 +1,4 @@
-import { Directive } from "vue-demi";
+import { Directive } from "vue";
 import { useKeepScroll } from "@/composable";
 
 export const directive: Directive = {
