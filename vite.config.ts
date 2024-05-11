@@ -4,6 +4,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import { defineConfig } from "vite";
 import packageJson from "./package.json";
+import { viteExternalsPlugin } from "vite-plugin-externals";
 
 const getPackageName = () => {
   return packageJson.name;
@@ -35,11 +36,18 @@ module.exports = defineConfig({
       formats,
       fileName: format => fileName[format],
     },
-    rollupOptions: {
-      external: ["vue", "@vueuse/core"],
-    },
   },
-  plugins: [vue(), vueJsx()],
+  plugins: [
+    vue(),
+    vueJsx(),
+    viteExternalsPlugin(
+      {
+        vue: "Vue",
+        "@vueuse/core": "VueUse",
+      },
+      { disableInServe: true }
+    ),
+  ],
   test: {},
   esbuild: {
     jsxFactory: "h",

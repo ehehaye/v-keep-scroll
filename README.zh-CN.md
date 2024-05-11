@@ -12,7 +12,7 @@ v-keep-scroll 可以在 activated 和 deactivated 之间保持 keep-alive 组件
 pnpm add v-keep-scroll
 ```
 
-### 全局引入
+### 全局引入 （ESM）
 
 ```javascript
 import { createApp } from "vue";
@@ -34,6 +34,20 @@ app.mount("#app");
     ]
   }
 }
+```
+
+### 全局引入 (CDN)
+
+```html
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/@vueuse/shared"></script>
+<script src="https://unpkg.com/@vueuse/core"></script>
+<script src="https://unpkg.com/v-keep-scroll"></script>
+<script>
+  const app = Vue.createApp(App);
+  app.use(vKeepScroll.default);
+  app.mount("#app");
+</script>
 ```
 
 ### 手动引入
