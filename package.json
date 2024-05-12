@@ -69,7 +69,6 @@
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
-    "vite-plugin-externals": "^0.6.2",
     "vitest": "^1.2.1",
     "vue": "^3.0.0"
   }

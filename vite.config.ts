@@ -4,7 +4,6 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import { defineConfig } from "vite";
 import packageJson from "./package.json";
-import { viteExternalsPlugin } from "vite-plugin-externals";
 
 const getPackageName = () => {
   return packageJson.name;
@@ -24,30 +23,37 @@ const fileName = {
   iife: `index.iife.js`,
 };
 
-const formats = Object.keys(fileName) as Array<keyof typeof fileName>;
-
 export default defineConfig({
   base: "./",
   build: {
     outDir: "./build/dist",
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: getPackageNameCamelCase(),
-      formats,
-      fileName: format => fileName[format],
+    },
+    rollupOptions: {
+      output: [
+        {
+          format: "es",
+          entryFileNames: fileName.es,
+        },
+        {
+          format: "cjs",
+          entryFileNames: fileName.cjs,
+        },
+        {
+          format: "iife",
+          name: getPackageNameCamelCase(),
+          entryFileNames: fileName.iife,
+          globals: {
+            vue: "Vue",
+            "@vueuse/core": "VueUse",
+          },
+        },
+      ],
+      external: ["vue", "@vueuse/core"],
     },
   },
-  plugins: [
-    vue(),
-    vueJsx(),
-    viteExternalsPlugin(
-      {
-        vue: "Vue",
-        "@vueuse/core": "VueUse",
-      },
-      { disableInServe: true }
-    ),
-  ],
+  plugins: [vue(), vueJsx()],
   test: {},
   esbuild: {
     jsxFactory: "h",
