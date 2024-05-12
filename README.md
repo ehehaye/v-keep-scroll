@@ -12,7 +12,7 @@ The v-keep-scroll library enables the preservation of scroll positions for eleme
 pnpm add v-keep-scroll
 ```
 
-### Global Import (via ESM)
+### Globally Import (via ESM)
 
 ```javascript
 import { createApp } from "vue";
