@@ -12,14 +12,28 @@ export const directive: Directive = {
           .map(s => {
             const e = element.querySelector(s);
             if (!e) {
-              // eslint-disable-next-line no-console
-              console.error(`Element not found: ${s}`);
+              console.error(`[v-keep-scroll] Element not found: ${s}`);
             }
             return e;
           })
           .filter(e => !!e);
 
-    elements.forEach(e => useKeepScroll(e));
+    elements.forEach((e: HTMLElement) => {
+      const { overflowX, overflowY } = getComputedStyle(e);
+
+      if (
+        !["auto", "scroll"].includes(overflowX) ||
+        !["auto", "scroll"].includes(overflowY)
+      ) {
+        console.warn(
+          `[v-keep-scroll] Element's overflow should be 'auto' or 'scroll': `,
+          e,
+          { overflowX, overflowY }
+        );
+      }
+
+      useKeepScroll(e);
+    });
   },
 };
 
