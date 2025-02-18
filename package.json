@@ -1,8 +1,8 @@
 {
   "name": "v-keep-scroll",
   "description": "Keep the scroll position for elements under keep-alive between activated and deactivated",
-  "repository": "https://github.com/tanghongxin/v-keep-scroll.git",
-  "homepage": "https://codepen.io/tanghongxin/pen/oNRNMzR",
+  "repository": "https://github.com/ehehaye/v-keep-scroll.git",
+  "homepage": "https://codepen.io/ehehaye/pen/oNRNMzR",
   "keywords": [
     "vue",
     "directive",
