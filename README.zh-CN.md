@@ -42,7 +42,7 @@ app.mount("#app");
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/@vueuse/shared"></script>
 <script src="https://unpkg.com/@vueuse/core"></script>
-<script src="https://unpkg.com/v-keep-scroll"></script>
+<script src="https://unpkg.com/v-keep-scroll/dist/index.iife.js"></script>
 <script>
   const app = Vue.createApp(App);
   app.use(vKeepScroll.default);
